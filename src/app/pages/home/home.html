@@ -1,0 +1,42 @@
+<div class="todo-app">
+  <header class="header-container d-flex justify-content-between align-items-center">
+    <div class="greeting">
+      <p class="hello">Hola, Isabella 👋</p>
+      <h1>{{ getGreeting() }}</h1>
+    </div>
+    <div class="time">{{ currentTime() | date: 'HH:mm:ss' }}</div>
+  </header>
+
+  <div class="input-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Añadir nueva tarea..."
+      [(ngModel)]="newTask"
+      (keyup.enter)="addTask()"
+    />
+    <button class="btn btn-add" type="button" (click)="addTask()">
+      + Agregar
+    </button>
+  </div>
+
+  <div class="task-list">
+    @for (task of tasks(); track task.id) {
+      <div
+        class="task-item d-flex justify-content-between align-items-center p-3 rounded"
+      >
+        <div class="d-flex align-items-center" (click)="toggleTask(task.id)">
+          <input
+            type="checkbox"
+            class="form-check-input me-2"
+            [checked]="task.completed"
+          />
+          <span [class.completed]="task.completed">{{ task.title }}</span>
+        </div>
+        <button class="btn btn-delete" (click)="deleteTask(task.id)">
+          🗑️
+        </button>
+      </div>
+    }
+  </div>
+</div>

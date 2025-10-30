@@ -1,0 +1,159 @@
+.todo-app {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 7rem 6rem auto;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.1);
+}
+
+.todo-app::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/main-background.jpg') center/cover no-repeat;
+  filter: opacity(0.35);
+  z-index: 0;
+  transform: scale(1.05);
+  transition: filter 0.3s ease;
+}
+
+.todo-app > * {
+  position: relative;
+  z-index: 1;
+}
+
+.header-container {
+  background: linear-gradient(135deg, #fff5ec, #ffe6d5);
+  padding: 1.5rem 2rem;
+  color: #3b2f2f;
+}
+
+.hello {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #694a2f;
+}
+
+.header-container h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #3b2f2f;
+}
+
+.time {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #f97316;
+}
+
+.input-group {
+  width: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  place-self: center;
+}
+
+.input-group input {
+  border: none;
+  background: #fff5ef;
+  border-radius: 12px 0 0 12px;
+  padding: 0.8rem 1rem;
+  color: #3b2f2f;
+}
+
+.input-group input::placeholder {
+  color: #a67858;
+}
+
+.input-group input:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px #f97316;
+}
+
+.btn-add {
+  border: none;
+  background-color: #f97316;
+  color: white;
+  border-radius: 0 12px 12px 0;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-add:hover {
+  background-color: #ea580c;
+}
+
+.task-list {
+  padding: 0 2rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-content: start;
+}
+
+.task-item {
+  background: #fff5ef;
+  border: 1px solid #fcd9bd;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(249, 115, 22, 0.2);
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #b1855c;
+}
+
+.btn-delete {
+  border: 1px solid #fca46e;
+  border-radius: 8px;
+  background: transparent;
+  color: #f97316;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+}
+
+.btn-delete:hover {
+  background: #ffe6d5;
+}
+
+input[type='checkbox'] {
+  width: 1.2rem;
+  height: 1.2rem;
+  appearance: none;
+  border: 2px solid #f97316;
+  border-radius: 6px;
+  background-color: #fff5ef;
+  display: grid;
+  place-content: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+input[type='checkbox']:hover {
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+}
+
+input[type='checkbox']:checked {
+  background-color: #f97316;
+  border-color: #f97316;
+}
+
+input[type='checkbox']:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.25);
+}
+
+
+

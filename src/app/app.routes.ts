@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router'
-import { CounterPage } from './pages/counter/counter-page'
+import { HomePage } from './pages/home/home'
 
 export const routes: Routes = [
   {
     path: '',
-    component: CounterPage
-  }
+    component: HomePage
+  },
 ]
